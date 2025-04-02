@@ -47,5 +47,20 @@ def sell_stock(symbol: str, quantity: int) -> str:
     return f"Sold {quantity} shares of {symbol}"
 
 
+@mcp.prompt()
+def analyze_stock(symbol: str, last_year_profit: str, company_info: str) -> str:
+    return f"""
+    You are a stock analyst. You are given a stock symbol and you need to analyze the stock.
+    Here is the income statement:
+    {last_year_profit}
+    Here is the company info:
+    {company_info}
+    Here is the symbol:
+    {symbol}
+    Make sure to analyze the income statement and company info to give a detailed analysis of the stock.
+    Make a recommendation on whether to buy, sell, or hold the stock.
+    """
+
+
 if __name__ == "__main__":
     mcp.run()
