@@ -23,5 +23,29 @@ def get_market_state() -> str:
     return "The market is open"
 
 
+@mcp.tool()
+def buy_stock(symbol: str, quantity: int) -> str:
+    """Buys a stock for a given symbol and quantity
+    Args:
+        symbol (str): The symbol of the company to buy stock for
+        quantity (int): The quantity of stock to buy
+    Returns:
+        str: A string containing the result of the transaction
+    """
+    return f"Bough {quantity} shares of {symbol}"
+
+
+@mcp.tool()
+def sell_stock(symbol: str, quantity: int) -> str:
+    """Sells a stock for a given symbol and quantity
+    Args:
+        symbol (str): The symbol of the company to sell stock for
+        quantity (int): The quantity of stock to sell
+    Returns:
+        str: A string containing the result of the transaction
+    """
+    return f"Sold {quantity} shares of {symbol}"
+
+
 if __name__ == "__main__":
     mcp.run()
